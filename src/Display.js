@@ -1,8 +1,6 @@
 function Display(props) {
     let display
-    if(props.bounty === {}){
-        display=(<p>Click "more" to see more about a bounty.</p>)
-    } else {
+    if(props.bounty.name){
         display = (
             <div className="showBounty">
                 <h2>{props.bounty.name}</h2>
@@ -10,6 +8,8 @@ function Display(props) {
                 <p>Last Seen: {props.bounty.lastSeen?props.bounty.lastSeen:'Unknown'}</p>
             </div>
         )
+    } else {
+        display=(<p>Click "more" to see more about a bounty.</p>)
     }
     return(<>{display}</>)
 }
